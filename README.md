@@ -1,71 +1,132 @@
-# Getting Started with Create React App
+🥄 Spoonful Planner: Your Energy-Friendly Daily Companion! 🥄
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Spoonful Planner, a React app designed to help you manage your energy levels effectively using Spoon Theory. It’s perfect for keeping your tasks, goals, and self-care balanced, all in one place. Built with ADHD-friendly simplicity in mind!
 
-## Available Scripts
+🌟 Features:
 
-In the project directory, you can run:
+	•	📋 Tiered Task Management: Organize tasks into energy levels (tiers) and track your spoons.
+	•	💬 Motivational Quotes: Get inspired with daily quotes.
+	•	🌬️ Breathing Exercises: Quick, guided breathing to help you reset.
+	•	🗓️ Google Calendar Integration: Add tasks directly to your calendar.
+	•	✍️ Journal: Reflect on your day and save your thoughts.
+	•	🏆 Stickers: Collect rewards for completing tasks.
+	•	📘 InfoModal: Learn about Spoon Theory and how this app can help.
 
-### `npm start`
+📂 Project Structure:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+spoonful-planner/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Motivation.jsx
+│   │   ├── BreathingExercise.jsx
+│   │   ├── AddToGoogleCalendar.jsx
+│   │   ├── Timer.jsx
+│   │   ├── Stickers.jsx
+│   │   ├── TaskManager.jsx
+│   │   ├── Journal.jsx
+│   │   ├── InfoModal.jsx
+│   ├── App.jsx
+│   ├── index.js
+│   ├── supabaseClient.js
+│   ├── index.css
+├── tailwind.config.js
+├── package.json
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🚀 How to Get Started:
 
-### `npm test`
+1️⃣ Install Dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+	1.	Clone the repository:
 
-### `npm run build`
+git clone https://github.com/your-username/spoonful-planner.git
+cd spoonful-planner
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+	2.	Install the required packages:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
 
-### `npm run eject`
+2️⃣ Set Up Environment Variables:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Add the following variables to a .env file in the project root:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_CLERK_FRONTEND_API_KEY=your_clerk_api_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_API_KEY=your_google_api_key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3️⃣ Run the App:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Start the development server:
 
-## Learn More
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app will open at http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🎨 Tailwind CSS Configuration:
 
-### Code Splitting
+The app uses Tailwind CSS for styling. Tailwind is pre-configured with DaisyUI for beautiful and accessible components. If you want to customize styles:
+	•	Edit tailwind.config.js:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+module.exports = {
+  content: ["./src/**/*.{js,jsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("daisyui")],
+};
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+	•	Modify src/index.css for custom styles:
 
-### Making a Progressive Web App
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🔑 Key Components:
 
-### Advanced Configuration
+Here’s what makes the app tick:
+	1.	Navbar: Handles sign-in/sign-out with Clerk.
+	2.	Motivation: Fetches daily quotes from the ZenQuotes API.
+	3.	BreathingExercise: Guided breathing with a progress bar.
+	4.	AddToGoogleCalendar: Adds tasks to Google Calendar.
+	5.	Timer: Tracks time for focus or breaks.
+	6.	TaskManager: Organizes tasks into tiers and tracks energy levels (spoons).
+	7.	Journal: Lets you save and reflect on daily entries.
+	8.	Stickers: Displays reward stickers earned for completed tasks.
+	9.	InfoModal: Explains Spoon Theory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+📦 Deployment (Optional, but cool!):
 
-### Deployment
+Deploy to Vercel:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+	1.	Install the Vercel CLI:
 
-### `npm run build` fails to minify
+npm install -g vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# spoonful
+
+	2.	Deploy the app:
+
+vercel
+
+
+	3.	Add environment variables in Vercel’s dashboard for smooth operation.
+
+💡 What is Spoon Theory?
+
+Spoon Theory explains how people with limited energy (“spoons”) manage their day. Every task uses spoons, and once they’re gone, you need to rest and recharge. This app helps you track spoons and organize tasks by energy levels. Use it to balance productivity and self-care!
+
+🛠️ Built With:
+
+	•	React: Frontend library for building user interfaces.
+	•	Supabase: Handles backend data (tasks, journal entries, stickers).
+	•	Clerk: Authentication for secure sign-in and sign-out.
+	•	Tailwind CSS & DaisyUI: Simple, accessible, and responsive design.
+
+🙌 Contributions & Feedback:
+
+We’d love to hear from you! Feel free to open issues or submit pull requests.
+
+🥄 Spoon Management Made Easy. Start Planning Today! 🥄
