@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
@@ -39,7 +38,7 @@ const App = () => {
           <div className="text-center">
             <h2 className="text-lg font-semibold mb-4">Please Sign In to Access These Features</h2>
             <SignInButton>
-              <button className="btn">Sign In</button>
+              <button className="btn btn-primary">Sign In</button>
             </SignInButton>
           </div>
         </SignedOut>

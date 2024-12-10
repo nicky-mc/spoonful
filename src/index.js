@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ClerkProvider } from "@clerk/clerk-react";
-import "./index.css";
+import "./index.css"; // Ensure this import is present
 import App from "./App";
 
 const clerkPublishableKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;

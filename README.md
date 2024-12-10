@@ -113,25 +113,7 @@ Here’s what makes the app tick:
 7. **Journal**: Lets you save and reflect on daily entries.
 8. **Stickers**: Displays reward stickers earned for completed tasks.
 9. **InfoModal**: Explains Spoon Theory.
-
-## 📦 Deployment (Optional, but cool!):
-
-Deploy to Vercel:
-
-1. Install the Vercel CLI:
-
-    ```bash
-    npm install -g vercel
-    ```
-
-2. Deploy the app:
-
-    ```bash
-    vercel
-    ```
-
-3. Add environment variables in Vercel’s dashboard for smooth operation.
-
+---
 ## 💡 What is Spoon Theory?
 
 Spoon Theory explains how people with limited energy (“spoons”) manage their day. Every task uses spoons, and once they’re gone, you need to rest and recharge. This app helps you track spoons and organize tasks by energy levels. Use it to balance productivity and self-care!
