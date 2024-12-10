@@ -1,10 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+// Create a Supabase client
+const supabase = createClient(
+  process.env.REACT_APP_SUPABASE_URL, // Your Supabase URL
+  process.env.REACT_APP_SUPABASE_ANON_KEY // Your Supabase Anon/Public Key
+);
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Supabase URL and anon key are required.");
-}
+// Function to set the Clerk token in the Supabase client
+export const setClerkToken = (clerkToken) => {
+  supabase.auth.setAuth(clerkToken);
+};
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export default supabase;
