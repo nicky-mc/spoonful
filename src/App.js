@@ -1,6 +1,7 @@
 import React from "react";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
+import UserProfile from "./components/UserProfile";
 import Motivation from "./components/Motivation";
 import BreathingExercise from "./components/BreathingExercise";
 import AddToGoogleCalendar from "./components/AddToGoogleCalendar";
@@ -27,6 +28,7 @@ const App = () => {
 
         {/* Protected Components */}
         <SignedIn>
+          <UserProfile />
           <TaskManager />
           <AddToGoogleCalendar task={task} />
           <Timer duration={1500} onComplete={() => alert("Time's up!")} />
