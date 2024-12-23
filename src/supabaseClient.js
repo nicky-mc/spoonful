@@ -1,9 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client
-const supabase = createClient(
+export const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL, // Your Supabase URL
-  process.env.REACT_APP_SUPABASE_KEY   // Your Supabase Anon/Public Key
+  process.env.REACT_APP_SUPABASE_ANON_KEY   // Your Supabase Anon/Public Key
 );
 
 // Function to set the Clerk token in the Supabase client
